@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TourBook Nepal — design system. All colors HSL. */
+
+@layer base {
+  :root {
+    /* Brand palette */
+    --background: 210 40% 98%;          /* #F8FAFC */
+    --foreground: 240 25% 13%;          /* #1A1A2E */
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 25% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 25% 13%;
+
+    --primary: 212 71% 39%;             /* #1E5FA8 */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 207 60% 51%;        /* #2C7BB6 */
+
+    --secondary: 213 100% 96%;          /* #EBF4FF */
+    --secondary-foreground: 212 71% 30%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;     /* #6B7280 */
+
+    --accent: 207 60% 51%;              /* #2C7BB6 */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;           /* #EF4444 */
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;             /* #22C55E */
+    --warning: 38 92% 50%;              /* #F59E0B */
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 212 71% 39%;
+
+    --radius: 0.75rem;
+
+    /* Admin sidebar */
+    --sidebar-background: 222 47% 11%;     /* #0F172A */
+    --sidebar-foreground: 215 25% 73%;     /* #CBD5E1 */
+    --sidebar-primary: 212 71% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 217 33% 20%;
+    --sidebar-ring: 212 71% 50%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(212 71% 25% / 0.85) 0%, hsl(207 60% 35% / 0.6) 60%, hsl(240 25% 13% / 0.4) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(213 100% 99%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 40% 20% / 0.05);
+    --shadow-card: 0 4px 16px -4px hsl(212 71% 30% / 0.08);
+    --shadow-elegant: 0 10px 30px -10px hsl(212 71% 30% / 0.25);
+    --shadow-md: 0 8px 24px -8px hsl(220 40% 20% / 0.15);
+
+    /* Transitions */
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 212 71% 55%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 207 60% 51%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 212 71% 55%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { font-family: 'Inter', system-ui, sans-serif; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4 { @apply font-semibold tracking-tight; }
+  .font-display { font-family: 'Playfair Display', Georgia, serif; }
+}
+
+@layer utilities {
+  .gradient-hero { background: var(--gradient-hero); }
+  .gradient-primary { background: var(--gradient-primary); }
+  .gradient-card { background: var(--gradient-card); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .transition-smooth { transition: var(--transition-smooth); }
+  .transition-spring { transition: var(--transition-spring); }
+  .text-success { color: hsl(var(--success)); }
+  .text-warning { color: hsl(var(--warning)); }
+  .bg-success { background-color: hsl(var(--success)); }
+  .bg-warning { background-color: hsl(var(--warning)); }
+
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-up { animation: fade-in-up 0.6s cubic-bezier(0.4,0,0.2,1) both; }
+
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .animate-scale-in { animation: scale-in 0.5s cubic-bezier(0.34,1.56,0.64,1) both; }
+}
+
+/* Leaflet inside our cards */
+.leaflet-container { font-family: inherit; }
