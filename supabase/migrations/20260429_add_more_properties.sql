@@ -20,8 +20,8 @@ BEGIN
    'Modern resort with stunning lake views, infinity pool, and Himalayan backdrop. Perfect for couples and families seeking luxury by the water.',
    'Lakeside Promenade 45', 'Pokhara', 'Gandaki', 28.2089, 83.9870,
    ARRAY['wifi','breakfast','parking','ac','tv','pool'],
-   '/src/assets/resort-1.jpg',
-   ARRAY['/src/assets/resort-1.jpg','/src/assets/property-1.jpg'],
+     '/property-1.jpg',
+     ARRAY['/property-1.jpg','/property-1.jpg'],
    'moderate', 'active', true)
   RETURNING id INTO p_id;
   INSERT INTO public.room_types (property_id, name, capacity, price_per_night, quantity, description) VALUES

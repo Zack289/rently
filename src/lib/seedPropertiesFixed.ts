@@ -39,6 +39,7 @@ export async function seedProperties() {
         longitude: number;
         amenities: string[];
         rooms: Array<{ name: string; capacity: number; price: number; quantity: number }>;
+        image: string;
       }>;
     }> = [
       // POKHARA
@@ -57,6 +58,7 @@ export async function seedProperties() {
               { name: "Deluxe Room", capacity: 2, price: 5500, quantity: 8 },
               { name: "Family Suite", capacity: 4, price: 9800, quantity: 4 },
             ],
+            image: "/property-1.jpg",
           },
           {
             name: "Mountain Gate Guesthouse",
@@ -70,6 +72,7 @@ export async function seedProperties() {
               { name: "Basic Room", capacity: 2, price: 2200, quantity: 10 },
               { name: "Private Ensuite", capacity: 2, price: 3500, quantity: 6 },
             ],
+            image: "/property-2.jpg",
           },
           {
             name: "Sarangkot View Hotel",
@@ -83,6 +86,7 @@ export async function seedProperties() {
               { name: "Standard Room", capacity: 2, price: 4200, quantity: 12 },
               { name: "Premium Suite", capacity: 3, price: 7900, quantity: 5 },
             ],
+            image: "/dest-pokhara.jpg",
           },
           {
             name: "Peace Retreat Homestay",
@@ -96,6 +100,7 @@ export async function seedProperties() {
               { name: "Cozy Room", capacity: 2, price: 2800, quantity: 6 },
               { name: "Family Room", capacity: 4, price: 4800, quantity: 3 },
             ],
+            image: "/property-3.jpg",
           },
           {
             name: "Lakefront Luxury Residences",
@@ -109,6 +114,7 @@ export async function seedProperties() {
               { name: "Executive Room", capacity: 2, price: 15500, quantity: 10 },
               { name: "Presidential Suite", capacity: 4, price: 28000, quantity: 2 },
             ],
+            image: "/property-1.jpg",
           },
         ],
       },
@@ -128,6 +134,7 @@ export async function seedProperties() {
               { name: "Heritage Room", capacity: 2, price: 4500, quantity: 8 },
               { name: "Deluxe Heritage", capacity: 2, price: 7200, quantity: 4 },
             ],
+            image: "/dest-bandipur.jpg",
           },
           {
             name: "Bandipur Mountain Lodge",
@@ -141,6 +148,7 @@ export async function seedProperties() {
               { name: "Standard Room", capacity: 2, price: 2600, quantity: 10 },
               { name: "Superior Room", capacity: 2, price: 4200, quantity: 5 },
             ],
+            image: "/property-2.jpg",
           },
           {
             name: "Siddhartha Homestay",
@@ -154,6 +162,7 @@ export async function seedProperties() {
               { name: "Cozy Double", capacity: 2, price: 2400, quantity: 6 },
               { name: "Family Room", capacity: 4, price: 3900, quantity: 3 },
             ],
+            image: "/property-3.jpg",
           },
           {
             name: "Bandipur Premium Resort",
@@ -167,6 +176,7 @@ export async function seedProperties() {
               { name: "Spa Suite", capacity: 2, price: 9500, quantity: 6 },
               { name: "Resort Villa", capacity: 4, price: 14000, quantity: 3 },
             ],
+            image: "/dest-bandipur.jpg",
           },
         ],
       },
@@ -186,6 +196,7 @@ export async function seedProperties() {
               { name: "Jungle Room", capacity: 2, price: 6500, quantity: 12 },
               { name: "Safari Suite", capacity: 2, price: 11500, quantity: 4 },
             ],
+            image: "/dest-chitwan.jpg",
           },
           {
             name: "Jungle Night Guesthouse",
@@ -199,6 +210,7 @@ export async function seedProperties() {
               { name: "Dorm Bed", capacity: 1, price: 1200, quantity: 20 },
               { name: "Private Room", capacity: 2, price: 3000, quantity: 8 },
             ],
+            image: "/property-2.jpg",
           },
           {
             name: "Tiger View Hotel",
@@ -212,6 +224,7 @@ export async function seedProperties() {
               { name: "Standard Room", capacity: 2, price: 3800, quantity: 15 },
               { name: "Deluxe Room", capacity: 3, price: 6500, quantity: 7 },
             ],
+            image: "/property-1.jpg",
           },
           {
             name: "Chitwan Riverside Resort",
@@ -225,6 +238,7 @@ export async function seedProperties() {
               { name: "River Suite", capacity: 2, price: 12800, quantity: 8 },
               { name: "Premium Villa", capacity: 4, price: 19500, quantity: 4 },
             ],
+            image: "/dest-chitwan.jpg",
           },
           {
             name: "Budget Tiger Hostel",
@@ -238,6 +252,7 @@ export async function seedProperties() {
               { name: "Shared Dorm", capacity: 1, price: 900, quantity: 30 },
               { name: "Twin Private", capacity: 2, price: 2500, quantity: 6 },
             ],
+            image: "/property-3.jpg",
           },
         ],
       },
@@ -287,7 +302,7 @@ export async function seedProperties() {
                 latitude: prop.latitude,
                 longitude: prop.longitude,
                 amenities: prop.amenities,
-                hero_image: "/placeholder.svg",
+                hero_image: prop.image || "/placeholder.svg",
                 gallery: [],
                 cancellation_policy: "moderate" as CancellationPolicy,
                 status: "active",
